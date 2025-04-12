@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <header>
+        <dvi class="logo"><img src="20250411_013344_0000.png" alt=""></dvi>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index2.html" style="color: #000;
+                    font-size: 20px;" class="active">الصفحة الرئسية</a></li>
+                <li><a href="index3.html">رزنامة</a></li>
+                <li><a href="index4.html" style="color: #000;
+                    font-size: 20px;">مذكرة</a></li>
+                <li><a href="index5.html">الحساب</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1> ملاحظة اليوم</h1>
+            <textarea id="note" rows="6" placeholder="كيف تشعرين اليوم؟"></textarea><br>
+
+            <button onclick="saveNote()"> حفظ الملاحظة</button>
+        </div>
+
+        <script>
+            function setTodayDate() {
+                const today = new Date().toISOString().split('T')[0];
+                // يمكن لاحقاً استخدامه للتاريخ إذا لزم الأمر
+            }
+
+            function saveNote() {
+                const note = document.getElementById("note").value;
+                if (note.trim() === "") {
+                    alert("⚠ الرجاء كتابة ملاحظة أولاً.");
+                    return;
+                }
+                alert("✅ تم حفظ الملاحظة:")
+                console.log(note); // يمكن استبدالها بالحفظ في قاعدة بيانات لاحقاً
+            }
+        </script>
+    </section>
+</body>
+
+</html>
